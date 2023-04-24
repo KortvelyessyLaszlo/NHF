@@ -1,5 +1,4 @@
 #include "csaladi.h"
-#include "film.h"
 
 void Csaladi::beolvas(){
     Film::beolvas();

@@ -1,9 +1,10 @@
 #include "film.h"
 #include "csaladi.h"
+#include "dokumentum.h"
 
 int main(){
-    Csaladi micimacko;
-    micimacko.beolvas();
-    micimacko.kiir();
+    Dokumentum AFold;
+    AFold.beolvas();
+    AFold.kiir();
     return 0;
 }

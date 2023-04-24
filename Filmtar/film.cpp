@@ -1,9 +1,8 @@
-#include <iostream>
 #include "film.h"
 
 void Film::beolvas(){
     std::cout << "Adja meg a cimet:" << std::endl;
-    std::cin >> cim;
+    std::getline(std::cin, cim);
     std::cout << "Adja meg a kiadas evet:" << std::endl;
     std::cin >> kiadas;
     std::cout << "Adja meg hany perces a film:" << std::endl;
