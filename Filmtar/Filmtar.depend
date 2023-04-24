@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1682337874 source:c:\users\lacik\desktop\nhf\filmtar\film.cpp
+	"film.h"
+
+1682068455 source:c:\users\lacik\desktop\nhf\filmtar\string5.cpp
+	<iostream>
+	<cstring>
+	"string5.h"
+
+1682067908 c:\users\lacik\desktop\nhf\filmtar\string5.h
+	<iostream>
+
+1682341698 source:c:\users\lacik\desktop\nhf\filmtar\main_teszt.cpp
+	<iostream>
+	"film.h"
+	"csaladi.h"
+
+1682338806 c:\users\lacik\desktop\nhf\filmtar\film.h
+	<iostream>
+	<string>
+
+1682342356 c:\users\lacik\desktop\nhf\filmtar\csaladi.h
+	"film.h"
+
