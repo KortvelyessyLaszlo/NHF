@@ -4,6 +4,7 @@ void Csaladi::beolvas(){
     Film::beolvas();
     std::cout << "Adja meg a korhatart:" << std::endl;
     std::cin >> korhatar;
+    std::cin.ignore();
 }
 
 void Csaladi::kiir(){

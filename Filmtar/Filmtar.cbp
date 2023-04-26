@@ -34,9 +34,13 @@
 		</Compiler>
 		<Unit filename="csaladi.cpp" />
 		<Unit filename="csaladi.h" />
+		<Unit filename="dokumentum.cpp" />
+		<Unit filename="dokumentum.h" />
 		<Unit filename="film.cpp" />
 		<Unit filename="film.h" />
 		<Unit filename="main_teszt.cpp" />
+		<Unit filename="tar.cpp" />
+		<Unit filename="tar.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

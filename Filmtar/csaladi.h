@@ -8,6 +8,8 @@ class Csaladi : public Film{
 public:
     Csaladi(std::string cim = "", int perc = 0, int kiadas = 0, int korhatar = 0):Film(cim,perc,kiadas), korhatar(korhatar){}
 
+    Csaladi(const Csaladi& cpy): Film(cpy), korhatar(cpy.korhatar){}
+
     ~Csaladi(){}
 
     void beolvas();

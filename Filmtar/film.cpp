@@ -7,15 +7,16 @@ void Film::beolvas(){
     std::cin >> kiadas;
     std::cout << "Adja meg hany perces a film:" << std::endl;
     std::cin >> perc;
+    std::cin.ignore();
 }
 
 void Film::kiir(){
     std ::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << std::endl;
 }
 
-const Film& Film::operator=(const Film& rhs){
+    Film& Film::operator=(const Film& rhs){
     if(this == &rhs)
-        return rhs;
+        return *this;
     cim = rhs.cim;
     perc = rhs.perc;
     kiadas = rhs.kiadas;

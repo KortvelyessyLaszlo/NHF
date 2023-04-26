@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1682337874 source:c:\users\lacik\desktop\nhf\filmtar\film.cpp
+1682511845 source:c:\users\lacik\desktop\nhf\filmtar\film.cpp
 	"film.h"
 
 1682068455 source:c:\users\lacik\desktop\nhf\filmtar\string5.cpp
@@ -10,15 +10,32 @@
 1682067908 c:\users\lacik\desktop\nhf\filmtar\string5.h
 	<iostream>
 
-1682341698 source:c:\users\lacik\desktop\nhf\filmtar\main_teszt.cpp
-	<iostream>
+1682516488 source:c:\users\lacik\desktop\nhf\filmtar\main_teszt.cpp
 	"film.h"
 	"csaladi.h"
+	"dokumentum.h"
+	"tar.h"
 
-1682338806 c:\users\lacik\desktop\nhf\filmtar\film.h
+1682516370 c:\users\lacik\desktop\nhf\filmtar\film.h
 	<iostream>
 	<string>
 
-1682342356 c:\users\lacik\desktop\nhf\filmtar\csaladi.h
+1682516214 c:\users\lacik\desktop\nhf\filmtar\csaladi.h
 	"film.h"
+
+1682370385 source:c:\users\lacik\desktop\nhf\filmtar\csaladi.cpp
+	"csaladi.h"
+
+1682406968 source:c:\users\lacik\desktop\nhf\filmtar\dokumentum.cpp
+	<iostream>
+	"dokumentum.h"
+
+1682516214 c:\users\lacik\desktop\nhf\filmtar\dokumentum.h
+	"film.h"
+
+1682511636 c:\users\lacik\desktop\nhf\filmtar\tar.h
+	"film.h"
+
+1682516333 source:c:\users\lacik\desktop\nhf\filmtar\tar.cpp
+	"tar.h"
 

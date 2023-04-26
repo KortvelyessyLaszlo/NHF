@@ -16,7 +16,7 @@ public:
 
     virtual ~Film(){}
 
-    const Film& operator=(const Film& rhs);
+    Film& operator=(const Film& rhs);
 
     virtual void beolvas();
 

@@ -8,11 +8,15 @@ class Dokumentum : public Film{
 public:
     Dokumentum(std::string cim = "", int perc = 0, int kiadas = 0, std::string leiras = ""): Film(cim,perc,kiadas), leiras(leiras){}
 
+    Dokumentum(const Dokumentum& cpy): Film(cpy), leiras(cpy.leiras){}
+
     ~Dokumentum(){}
 
     void beolvas();
 
     void kiir();
+
+    Dokumentum& operator=(const Dokumentum& rhs);
 };
 
 #endif
