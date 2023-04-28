@@ -9,13 +9,13 @@ int main(){
     Tar tar;
     char valasztas;
     while(valasztas != 'e'){
-        cout << endl << "a: Hozzaadas" << endl << "b: Torles" << endl << "c: Listazas" << endl << "e: EXIT" << endl;
+        cout << "a: Hozzaadas" << endl << "b: Torles" << endl << "c: Listazas" << endl << "e: EXIT" << endl;
         cin >> valasztas;
         cin.ignore();
         switch(valasztas){
             case 'a':{
                 char tipus;
-                cout << endl << "a: Film" << endl << "b: Csaladifilm" << endl << "c: Dokumentumfilm" << endl << "e: VISSZA" << endl;
+                cout << "a: Film" << endl << "b: Csaladifilm" << endl << "c: Dokumentumfilm" << endl << "e: VISSZA" << endl;
                 cin >> tipus;
                 cin.ignore();
                 switch(tipus){
@@ -44,10 +44,19 @@ int main(){
                 }
             }break;
             case 'b':{
-
+                tar.lista();
+                cout << "Hanyadik elemet szeretne torolni?" << endl;
+                size_t del;
+                cin >> del;
+                cin.ignore();
+                try{
+                    tar.torol(del - 1);
+                }catch(out_of_range){
+                    cout << "Nincs ilyen index!";
+                }
             }break;
             case 'c':{
-
+                tar.lista();
             }break;
             case 'e':
                 break;
