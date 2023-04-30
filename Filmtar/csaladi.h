@@ -14,7 +14,7 @@ public:
 
     void beolvas();
 
-    void kiir();
+    void kiir()const;
 };
 
 #endif

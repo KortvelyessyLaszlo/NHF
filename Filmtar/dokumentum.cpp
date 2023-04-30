@@ -6,7 +6,7 @@ void Dokumentum::beolvas(){
     std::getline(std::cin, leiras);
 }
 
-void Dokumentum::kiir(){
+void Dokumentum::kiir()const{
     std::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << ", Leiras: " << leiras << std::endl;
 }
 

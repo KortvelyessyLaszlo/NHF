@@ -14,7 +14,7 @@ public:
 
     ~Tar();
 
-    void lista();
+    void lista()const;
 
     void add(Film* uj);
 

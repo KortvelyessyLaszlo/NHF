@@ -20,7 +20,7 @@ public:
 
     virtual void beolvas();
 
-    virtual void kiir();
+    virtual void kiir()const;
 };
 
 #endif // FILM_H

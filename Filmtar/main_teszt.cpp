@@ -52,7 +52,7 @@ int main(){
                 try{
                     tar.torol(del - 1);
                 }catch(out_of_range){
-                    cout << "Nincs ilyen index!";
+                    cout << "Nincs ilyen index!" << endl;
                 }
             }break;
             case 'c':{

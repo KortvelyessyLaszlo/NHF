@@ -10,7 +10,7 @@ void Film::beolvas(){
     std::cin.ignore();
 }
 
-void Film::kiir(){
+void Film::kiir()const{
     std ::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << std::endl;
 }
 

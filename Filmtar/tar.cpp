@@ -34,7 +34,7 @@ void Tar::torol(size_t index){
     --db;
 }
 
-void Tar::lista(){
+void Tar::lista()const{
     for(size_t i = 0; i < db; ++i){
         std::cout << i + 1 << ". ";
         filmek[i]->kiir();

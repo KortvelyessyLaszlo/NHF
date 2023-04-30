@@ -7,6 +7,6 @@ void Csaladi::beolvas(){
     std::cin.ignore();
 }
 
-void Csaladi::kiir(){
+void Csaladi::kiir()const{
     std ::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << ", Korhatar: " << korhatar << std::endl;
 }
