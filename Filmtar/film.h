@@ -2,6 +2,7 @@
 #define FILM_H
 
 #include <iostream>
+#include <fstream>
 #include <string>
 
 class Film{
@@ -21,6 +22,8 @@ public:
     virtual void beolvas();
 
     virtual void kiir()const;
+
+    virtual void beolvas(std::ifstream& is);
 };
 
-#endif // FILM_H
+#endif

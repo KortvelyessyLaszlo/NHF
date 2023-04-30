@@ -23,3 +23,7 @@ void Film::kiir()const{
     return *this;
 }
 
+void Film::beolvas(std::ifstream& is){
+    std::getline(is, cim,';');
+}
+
