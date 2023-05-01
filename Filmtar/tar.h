@@ -14,11 +14,15 @@ public:
 
     ~Tar();
 
-    void lista()const;
-
     void add(Film* uj);
 
     void torol(size_t index);
+
+    void fill(const char* file);
+
+    void save(const char* file)const;
+
+    void list()const;
 };
 
 #endif

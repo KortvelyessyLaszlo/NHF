@@ -14,9 +14,8 @@ public:
 
     void beolvas();
 
+    void beolvas(std::ifstream& is);
+
     void kiir()const;
-
-    Dokumentum& operator=(const Dokumentum& rhs);
 };
-
 #endif

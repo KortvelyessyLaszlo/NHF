@@ -1,3 +1,6 @@
+#include<ios>
+#include<limits>
+
 #include "film.h"
 #include "csaladi.h"
 #include "dokumentum.h"
@@ -7,17 +10,22 @@ using namespace std;
 
 int main(){
     Tar tar;
+    try{
+        tar.fill("adat.txt");
+    }catch(const char* err){
+        cout << err;
+    }
     char valasztas;
     while(valasztas != 'e'){
         cout << "a: Hozzaadas" << endl << "b: Torles" << endl << "c: Listazas" << endl << "e: EXIT" << endl;
         cin >> valasztas;
-        cin.ignore();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         switch(valasztas){
             case 'a':{
                 char tipus;
                 cout << "a: Film" << endl << "b: Csaladifilm" << endl << "c: Dokumentumfilm" << endl << "e: VISSZA" << endl;
                 cin >> tipus;
-                cin.ignore();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 switch(tipus){
                     case 'a':{
                         Film film;
@@ -44,11 +52,11 @@ int main(){
                 }
             }break;
             case 'b':{
-                tar.lista();
+                tar.list();
                 cout << "Hanyadik elemet szeretne torolni?" << endl;
                 size_t del;
                 cin >> del;
-                cin.ignore();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 try{
                     tar.torol(del - 1);
                 }catch(out_of_range){
@@ -56,7 +64,7 @@ int main(){
                 }
             }break;
             case 'c':{
-                tar.lista();
+                tar.list();
             }break;
             case 'e':
                 break;

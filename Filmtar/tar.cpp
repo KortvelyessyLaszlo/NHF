@@ -1,4 +1,6 @@
 #include "tar.h"
+#include "dokumentum.h"
+#include "csaladi.h"
 
 Tar::~Tar(){
     for(size_t i = 0; i < db; ++i){
@@ -34,7 +36,45 @@ void Tar::torol(size_t index){
     --db;
 }
 
-void Tar::lista()const{
+void Tar::fill(const char* file){
+    std::ifstream inFile;
+    inFile.open(file);
+    if(!inFile.is_open())
+        throw "Nem sikerult megynitni a fajlt!\n";
+    char tipus;
+    while(inFile >> tipus){
+        inFile.ignore(1);
+        if(tipus == 'F'){
+            Film film;
+            film.beolvas(inFile);
+            this->add(new Film(film));
+        }
+        if(tipus == 'D'){
+            Dokumentum dokumentum;
+            dokumentum.beolvas(inFile);
+            this->add(new Dokumentum(dokumentum));
+        }
+        if(tipus == 'C'){
+            Csaladi csaladi;
+            csaladi.beolvas(inFile);
+            this->add(new Csaladi(csaladi));
+        }
+    }
+    inFile.close();   
+}
+
+void Tar::save(const char* file)const{
+    std::ofstream outFile;
+    outFile.open(file);
+    if(!outFile.is_open())
+        throw "Nem sikerult megynitni a fajlt!\n";
+    for(size_t i = 0; i < db; ++i){
+        filmek[i]->kiir();
+    }
+    outFile.close();
+}
+
+void Tar::list()const{
     for(size_t i = 0; i < db; ++i){
         std::cout << i + 1 << ". ";
         filmek[i]->kiir();

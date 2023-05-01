@@ -6,16 +6,11 @@ void Dokumentum::beolvas(){
     std::getline(std::cin, leiras);
 }
 
-void Dokumentum::kiir()const{
-    std::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << ", Leiras: " << leiras << std::endl;
+void Dokumentum::beolvas(std::ifstream& is){
+    Film::beolvas(is);
+    std::getline(is, leiras);
 }
 
-Dokumentum& Dokumentum::operator=(const Dokumentum& rhs){
-    if(this == &rhs)
-        return *this;
-    cim = rhs.cim;
-    perc = rhs.perc;
-    kiadas = rhs.kiadas;
-    leiras = rhs.leiras;
-    return *this;
+void Dokumentum::kiir()const{
+    std::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << ", Leiras: " << leiras << std::endl;
 }

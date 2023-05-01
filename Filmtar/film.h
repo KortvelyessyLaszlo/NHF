@@ -17,13 +17,10 @@ public:
 
     virtual ~Film(){}
 
-    Film& operator=(const Film& rhs);
-
     virtual void beolvas();
 
-    virtual void kiir()const;
-
     virtual void beolvas(std::ifstream& is);
-};
 
+    virtual void kiir()const;
+};
 #endif
