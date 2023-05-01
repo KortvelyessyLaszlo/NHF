@@ -17,7 +17,7 @@ int main(){
     }
     char valasztas;
     while(valasztas != 'e'){
-        cout << "a: Hozzaadas" << endl << "b: Torles" << endl << "c: Listazas" << endl << "e: EXIT" << endl;
+        cout << endl << "a: Hozzaadas" << endl << "b: Torles" << endl << "c: Listazas" << endl << "e: EXIT" << endl;
         cin >> valasztas;
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         switch(valasztas){
@@ -71,6 +71,11 @@ int main(){
             default:
                 cout << "Az alabbi menupontok kozul valasszon!" << endl;
         }
+    }
+    try{
+        tar.save("adat.txt");
+    }catch(const char* err){
+        cout << err;
     }
     return 0;
 }

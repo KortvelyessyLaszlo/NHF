@@ -17,5 +17,7 @@ public:
     void beolvas(std::ifstream& is);
 
     void kiir()const;
+    
+    void kiir(std::ofstream& os)const;
 };
 #endif

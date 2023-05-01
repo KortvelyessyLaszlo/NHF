@@ -14,3 +14,7 @@ void Dokumentum::beolvas(std::ifstream& is){
 void Dokumentum::kiir()const{
     std::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << ", Leiras: " << leiras << std::endl;
 }
+
+void Dokumentum::kiir(std::ofstream& os)const{
+    os << "D;" << cim << ";" << perc << ";" << kiadas << ";" << leiras << std::endl;
+}

@@ -22,5 +22,7 @@ public:
     virtual void beolvas(std::ifstream& is);
 
     virtual void kiir()const;
+
+    virtual void kiir(std::ofstream& os)const;
 };
 #endif

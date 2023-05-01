@@ -69,7 +69,7 @@ void Tar::save(const char* file)const{
     if(!outFile.is_open())
         throw "Nem sikerult megynitni a fajlt!\n";
     for(size_t i = 0; i < db; ++i){
-        filmek[i]->kiir();
+        filmek[i]->kiir(outFile);
     }
     outFile.close();
 }

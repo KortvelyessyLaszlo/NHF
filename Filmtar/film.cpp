@@ -21,3 +21,7 @@ void Film::beolvas(std::ifstream& is){
 void Film::kiir()const{
     std ::cout << "Cim: " << cim << ", Ido: " << perc << " perc, Kiadas eve: " << kiadas << std::endl;
 }
+
+void Film::kiir(std::ofstream& os)const{
+    os << "F;" << cim << ";" << perc << ";" << kiadas << std::endl;
+}
