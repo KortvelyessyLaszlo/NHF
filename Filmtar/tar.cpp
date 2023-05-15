@@ -21,7 +21,7 @@ void Tar::add(Film* uj){
 }
 
 void Tar::torol(size_t index){
-    if(index >= db)
+    if(index >= db || index < 0)
         throw std::out_of_range("Tar");
     Film** uj_tomb = new Film*[db - 1];
     for(size_t i = 0; i < index; ++i){
