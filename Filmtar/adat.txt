@@ -1,6 +1,5 @@
 F;Terminator;115;1985
 D;A bolygonk;93;2006;A foldunk termeszeterol szolo dokumentumfilm
-C;Harry Potter;122;2002;12
 F;Harcosok Klubja;126;2008
 C;Micimacko;93;1987;6
 F;Gyuruk Ura;185;1995

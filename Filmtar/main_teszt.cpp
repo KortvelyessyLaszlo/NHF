@@ -1,6 +1,7 @@
 #include<ios>
 #include<limits>
 
+#include "memtrace.h"
 #include "film.h"
 #include "csaladi.h"
 #include "dokumentum.h"
@@ -11,7 +12,7 @@ using namespace std;
 int main(){
     Tar tar;
     try{
-        tar.fill("adat.txt");
+        tar.betolt("adat.txt");
     }catch(const char* err){
         cout << err;
     }
@@ -30,19 +31,19 @@ int main(){
                     case 'a':{
                         Film film;
                         film.beolvas();
-                        tar.add(new Film(film));
+                        tar.hozzaad(new Film(film));
                     }
                     break;
                     case 'b':{
                         Csaladi csaladi;
                         csaladi.beolvas();
-                        tar.add(new Csaladi(csaladi));
+                        tar.hozzaad(new Csaladi(csaladi));
                     }
                     break;
                     case 'c':{
                         Dokumentum dokumentum;
                         dokumentum.beolvas();
-                        tar.add(new Dokumentum(dokumentum));
+                        tar.hozzaad(new Dokumentum(dokumentum));
                     }
                     break;
                     case 'e':
@@ -52,7 +53,7 @@ int main(){
                 }
             }break;
             case 'b':{
-                tar.list();
+                tar.lista();
                 cout << "Hanyadik elemet szeretne torolni?" << endl;
                 size_t del;
                 cin >> del;
@@ -64,7 +65,7 @@ int main(){
                 }
             }break;
             case 'c':{
-                tar.list();
+                tar.lista();
             }break;
             case 'e':
                 break;
@@ -73,7 +74,7 @@ int main(){
         }
     }
     try{
-        tar.save("adat.txt");
+        tar.mentes("adat.txt");
     }catch(const char* err){
         cout << err;
     }

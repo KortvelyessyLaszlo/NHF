@@ -9,7 +9,7 @@ Tar::~Tar(){
     delete[] filmek;
 }
 
-void Tar::add(Film* uj){
+void Tar::hozzaad(Film* uj){
     Film** uj_tomb = new Film*[db + 1];
     for(size_t i = 0; i < db; ++i){
         uj_tomb[i] = filmek[i];
@@ -36,7 +36,7 @@ void Tar::torol(size_t index){
     --db;
 }
 
-void Tar::fill(const char* file){
+void Tar::betolt(const char* file){
     std::ifstream inFile;
     inFile.open(file);
     if(!inFile.is_open())
@@ -47,23 +47,23 @@ void Tar::fill(const char* file){
         if(tipus == 'F'){
             Film film;
             film.beolvas(inFile);
-            this->add(new Film(film));
+            this->hozzaad(new Film(film));
         }
         if(tipus == 'D'){
             Dokumentum dokumentum;
             dokumentum.beolvas(inFile);
-            this->add(new Dokumentum(dokumentum));
+            this->hozzaad(new Dokumentum(dokumentum));
         }
         if(tipus == 'C'){
             Csaladi csaladi;
             csaladi.beolvas(inFile);
-            this->add(new Csaladi(csaladi));
+            this->hozzaad(new Csaladi(csaladi));
         }
     }
-    inFile.close();   
+    inFile.close();
 }
 
-void Tar::save(const char* file)const{
+void Tar::mentes(const char* file)const{
     std::ofstream outFile;
     outFile.open(file);
     if(!outFile.is_open())
@@ -74,7 +74,7 @@ void Tar::save(const char* file)const{
     outFile.close();
 }
 
-void Tar::list()const{
+void Tar::lista()const{
     for(size_t i = 0; i < db; ++i){
         std::cout << i + 1 << ". ";
         filmek[i]->kiir();

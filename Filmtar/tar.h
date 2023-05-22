@@ -3,26 +3,41 @@
 
 #include "film.h"
 
+/// Filmek heterogen kollekcioja. Dinamikus tarolo
 class Tar{
-    size_t db;
     Film** filmek;
+    size_t db;
 
     Tar(const Tar&);
     Tar& operator=(const Tar&);
 public:
-    Tar(): db(0), filmek(NULL){}
+    /// parameter nelkuli konstruktor
+    Tar():db(0), filmek(NULL){}
 
+    /// destruktor
     ~Tar();
 
-    void add(Film* uj);
+    /// Uj film hozzadasa a tarolohoz. Es a tarolo meretenek novelese
+    /// @param uj - Az uj film.
+    void hozzaad(Film* uj);
 
+    /// Adott indexu elem torlese a tarolobol, es a tarolo meretenek csokkentese
+    /// @param index - index
+    /// @return - std::out_of_range, ha a parameter(index) nem resze a tombnek
     void torol(size_t index);
 
-    void fill(const char* file);
+    /// Egy fajlbol a tarolo inicializalasa
+    /// @param file - Fajl neve
+    /// @return - const char* hiba, ha fajlt nem lehet megnyitni
+    void betolt(const char* file);
 
-    void save(const char* file)const;
+    /// A tarolo mentese egy fajlba
+    /// @param file - Fajl neve
+    /// @return - const char* hiba, ha fajlt nem lehet megnyitni
+    void mentes(const char* file)const;
 
-    void list()const;
+    /// A tarolo kilistazasa
+    void lista()const;
 };
 
 #endif

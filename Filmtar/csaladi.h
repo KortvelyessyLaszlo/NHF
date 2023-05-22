@@ -3,15 +3,17 @@
 
 #include "film.h"
 
+/// Film osztaly leszarmazottja
 class Csaladi : public Film{
     int korhatar;
 public:
     Csaladi(std::string cim = "", int perc = 0, int kiadas = 0, int korhatar = 0):Film(cim,perc,kiadas), korhatar(korhatar){}
 
-    Csaladi(const Csaladi& cpy): Film(cpy), korhatar(cpy.korhatar){}
+    Csaladi(const Csaladi& cpy):Film(cpy), korhatar(cpy.korhatar){}
 
     ~Csaladi(){}
 
+    /// A film osztalnyak megfelelo, leszarmaztatott fuggvenyek
     void beolvas();
 
     void beolvas(std::ifstream& is);
