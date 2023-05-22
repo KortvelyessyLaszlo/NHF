@@ -1,6 +1,7 @@
 #ifndef FILM_H
 #define FILM_H
 
+#include "memtrace.h"
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -14,12 +15,12 @@ protected:
 public:
     /// Konstruktor
     /// @param cim
-    /// @param perc 
-    /// @param kiadas 
+    /// @param perc
+    /// @param kiadas
     Film(std::string cim = "", int perc = 0, int kiadas = 0):cim(cim), perc(perc), kiadas(kiadas){}
 
     /// masolo konstruktor
-    /// @param cpy 
+    /// @param cpy
     Film(const Film& cpy):cim(cpy.cim), perc(cpy.perc), kiadas(cpy.kiadas){}
 
     /// Destruktor
@@ -36,7 +37,7 @@ public:
     virtual void kiir()const;
 
     /// Fajlba kiiras
-    /// @param os 
+    /// @param os
     virtual void kiir(std::ofstream& os)const;
 };
 #endif

@@ -60,7 +60,7 @@ int main(){
                 cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 try{
                     tar.torol(del - 1);
-                }catch(out_of_range){
+                }catch(out_of_range&){
                     cout << "Nincs ilyen index!" << endl;
                 }
             }break;

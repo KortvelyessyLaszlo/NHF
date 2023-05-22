@@ -1,3 +1,4 @@
+#include "memtrace.h"
 #include "tar.h"
 #include "dokumentum.h"
 #include "csaladi.h"

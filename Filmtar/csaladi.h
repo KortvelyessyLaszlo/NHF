@@ -1,6 +1,7 @@
 #ifndef CSALADI_H
 #define CSALADI_H
 
+#include "memtrace.h"
 #include "film.h"
 
 /// Film osztaly leszarmazottja

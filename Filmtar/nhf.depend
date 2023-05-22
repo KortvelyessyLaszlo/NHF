@@ -58,3 +58,78 @@
 	<iterator>
 	<regex>
 
+1684771501 source:c:\users\lacik\desktop\nhf\nhf\filmtar\csaladi.cpp
+	"memtrace.h"
+	"csaladi.h"
+
+1684771501 c:\users\lacik\desktop\nhf\nhf\filmtar\csaladi.h
+	"memtrace.h"
+	"film.h"
+
+1684771501 c:\users\lacik\desktop\nhf\nhf\filmtar\film.h
+	"memtrace.h"
+	<iostream>
+	<fstream>
+	<string>
+
+1684771501 source:c:\users\lacik\desktop\nhf\nhf\filmtar\dokumentum.cpp
+	"memtrace.h"
+	"dokumentum.h"
+
+1684771501 c:\users\lacik\desktop\nhf\nhf\filmtar\dokumentum.h
+	"memtrace.h"
+	"film.h"
+
+1684771501 source:c:\users\lacik\desktop\nhf\nhf\filmtar\film.cpp
+	"memtrace.h"
+	"film.h"
+
+1684772013 source:c:\users\lacik\desktop\nhf\nhf\filmtar\main_teszt.cpp
+	<ios>
+	<limits>
+	"memtrace.h"
+	"film.h"
+	"csaladi.h"
+	"dokumentum.h"
+	"tar.h"
+
+1684771254 c:\users\lacik\desktop\nhf\nhf\filmtar\memtrace.h
+	<new>
+	<cstdio>
+	<stdlib.h>
+	<iostream>
+	<fstream>
+	<sstream>
+	<vector>
+	<list>
+	<map>
+	<algorithm>
+	<functional>
+	<memory>
+	<iomanip>
+	<locale>
+	<typeinfo>
+	<ostream>
+	<stdexcept>
+	<ctime>
+	<iterator>
+	<regex>
+
+1684771930 c:\users\lacik\desktop\nhf\nhf\filmtar\tar.h
+	"memtrace.h"
+	"film.h"
+
+1684771254 source:c:\users\lacik\desktop\nhf\nhf\filmtar\memtrace.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	"memtrace.h"
+
+1684771930 source:c:\users\lacik\desktop\nhf\nhf\filmtar\tar.cpp
+	"memtrace.h"
+	"tar.h"
+	"dokumentum.h"
+	"csaladi.h"
+

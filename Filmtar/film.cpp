@@ -1,3 +1,4 @@
+#include "memtrace.h"
 #include "film.h"
 
 void Film::beolvas(){

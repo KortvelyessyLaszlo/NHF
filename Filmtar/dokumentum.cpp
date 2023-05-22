@@ -1,3 +1,4 @@
+#include "memtrace.h"
 #include "dokumentum.h"
 
 void Dokumentum::beolvas(){
