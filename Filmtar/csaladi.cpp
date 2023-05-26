@@ -1,3 +1,4 @@
+#include "memtrace.h"
 #include "csaladi.h"
 
 void Csaladi::beolvas(){

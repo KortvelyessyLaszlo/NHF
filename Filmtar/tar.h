@@ -1,6 +1,7 @@
 #ifndef TAR_H
 #define TAR_H
 
+#include "memtrace.h"
 #include "film.h"
 
 /// Filmek heterogen kollekcioja. Dinamikus tarolo
@@ -12,7 +13,7 @@ class Tar{
     Tar& operator=(const Tar&);
 public:
     /// parameter nelkuli konstruktor
-    Tar():db(0), filmek(NULL){}
+    Tar():filmek(NULL), db(0){}
 
     /// destruktor
     ~Tar();

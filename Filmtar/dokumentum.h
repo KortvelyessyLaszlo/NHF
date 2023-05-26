@@ -1,6 +1,7 @@
 #ifndef DOKUMNETUM_H
 #define DOKUMENTUM_H
 
+#include "memtrace.h"
 #include "film.h"
 
 /// Film osztaly leszarmazottja
@@ -19,7 +20,7 @@ public:
     void beolvas(std::ifstream& is);
 
     void kiir()const;
-    
+
     void kiir(std::ofstream& os)const;
 };
 #endif
