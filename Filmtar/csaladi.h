@@ -23,5 +23,4 @@ public:
 
     void kiir(std::ofstream& os)const;
 };
-
 #endif

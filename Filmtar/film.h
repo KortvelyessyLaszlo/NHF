@@ -1,10 +1,11 @@
 #ifndef FILM_H
 #define FILM_H
 
-#include "memtrace.h"
 #include <iostream>
 #include <fstream>
 #include <string>
+
+#include "memtrace.h"
 
 /// A csaladi es dokumentum osztaly alaposztalya
 class Film{

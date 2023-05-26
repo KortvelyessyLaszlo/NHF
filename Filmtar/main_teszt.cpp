@@ -2,81 +2,81 @@
 #include<limits>
 
 #include "memtrace.h"
+#include "gtest_lite.h"
 #include "film.h"
 #include "csaladi.h"
 #include "dokumentum.h"
 #include "tar.h"
+#include "menu.h"
 
 using namespace std;
 
+void Test1(){// A beolvaso es kiiro fuggvenyek tesztelese
+    cout << "--->Test1: A filmek beolvasasanak es kiirasanak a tesztelese<---" << endl << endl;
+
+    cout << "---Film tipusu film beolvasasa---" << endl;
+    Film film;
+    film.beolvas();
+    film.kiir();
+
+    cout << "---Dokumentum tipusu film beolvasasa---" << endl;
+    Dokumentum dok;
+    dok.beolvas();      
+    dok.kiir();
+
+    cout << "---Csaladi tipusu film beolvasasa---" << endl;
+    Csaladi csal;
+    csal.beolvas();
+    csal.kiir();
+}
+
 int main(){
-    Tar tar;
-    try{
-        tar.betolt("adat.txt");
-    }catch(const char* err){
-        cout << err;
-    }
-    char valasztas;
-    while(valasztas != 'e'){
-        cout << endl << "a: Hozzaadas" << endl << "b: Torles" << endl << "c: Listazas" << endl << "e: EXIT" << endl;
-        cin >> valasztas;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        switch(valasztas){
-            case 'a':{
-                char tipus;
-                cout << "a: Film" << endl << "b: Csaladifilm" << endl << "c: Dokumentumfilm" << endl << "e: VISSZA" << endl;
-                cin >> tipus;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                switch(tipus){
-                    case 'a':{
-                        Film film;
-                        film.beolvas();
-                        tar.hozzaad(new Film(film));
-                    }
-                    break;
-                    case 'b':{
-                        Csaladi csaladi;
-                        csaladi.beolvas();
-                        tar.hozzaad(new Csaladi(csaladi));
-                    }
-                    break;
-                    case 'c':{
-                        Dokumentum dokumentum;
-                        dokumentum.beolvas();
-                        tar.hozzaad(new Dokumentum(dokumentum));
-                    }
-                    break;
-                    case 'e':
-                        break;
-                    default:
-                        cout << "Ilyen film tipus nincsen!" << endl;
-                }
-            }break;
-            case 'b':{
-                tar.lista();
-                cout << "Hanyadik elemet szeretne torolni?" << endl;
-                size_t del;
-                cin >> del;
-                cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                try{
-                    tar.torol(del - 1);
-                }catch(out_of_range&){
-                    cout << "Nincs ilyen index!" << endl;
-                }
-            }break;
-            case 'c':{
-                tar.lista();
-            }break;
-            case 'e':
-                break;
-            default:
-                cout << "Az alabbi menupontok kozul valasszon!" << endl;
-        }
-    }
-    try{
-        tar.mentes("adat.txt");
-    }catch(const char* err){
-        cout << err;
-    }
+
+    Test1(); //Film osztaly es leszarmazottak tesztelese
+
+    TEST(Test2,Tarolo){
+        Tar tarolo;
+
+        cout << endl << "--- Tar::hozzaad()---" << endl;
+        tarolo.hozzaad(new Film("Bosszuallok",124,2010));
+        tarolo.hozzaad(new Dokumentum("A Fold", 83, 2002,"reszletes leiras..."));
+        tarolo.hozzaad(new Csaladi("Mickey eger", 23, 1950, 6));
+        cout << "A hozzaadott filmek listaja:" << endl;
+        tarolo.lista();
+
+        cout << endl << "--- Tar::torol()---" << endl;
+        cout << "A torlendo elem indexe:" << endl;
+        size_t index;
+        cin >> index;
+        try{tarolo.torol(index - 1);}catch(out_of_range& e){cout << "Helytelen index!" << endl;}
+        cout << endl << "A lista ujra:" << endl;
+        tarolo.lista();
+        EXPECT_THROW(tarolo.torol(3),out_of_range&);     // Hibas indexeleskor std::out_of_range
+    }ENDM
+
+    TEST(Test3,Menu_es_Fajlkezeles){
+        Menu menu;
+        Tar tar;
+
+        EXPECT_THROW(tar.betolt("hibasfajlnev.txt"),const char*); //Ha nem letezik a fajl akkor a program beolvasaskor hibat dob
+        EXPECT_NO_THROW(tar.betolt("adat.txt"));
+        try{
+            cout <<endl << "A fajlbol beolvasott lista:" << endl;
+            tar.lista();
+
+            cout << endl << "---'A' menupont(Film Hozzadasa) tesztje---" << endl;
+            menu.A(tar);
+
+            cout << endl << "---'B' menupont(Film Torlese) tesztje---" << endl;
+            menu.B(tar);
+
+            cout << endl << "---'C' menupont(Listazas)---" << endl;
+            menu.C(tar);
+
+        }catch(out_of_range& e){cout << "Helytelen index!" << endl;}
+
+        tar.mentes("adat.txt"); //Nem szukseges kivetelt dobnia, mert letrehozza a parameterben levo fajlt, ha az meg nem letezik
+    }ENDM
+
     return 0;
 }

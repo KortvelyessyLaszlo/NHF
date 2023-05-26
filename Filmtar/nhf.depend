@@ -1,37 +1,47 @@
 # depslib dependency file v1.0
-1682966416 source:c:\users\lacik\desktop\nhf\filmtar\csaladi.cpp
+1685095011 source:c:\users\lacik\desktop\nhf\filmtar\csaladi.cpp
+	"memtrace.h"
 	"csaladi.h"
 
-1684752604 c:\users\lacik\desktop\nhf\filmtar\csaladi.h
+1685096761 c:\users\lacik\desktop\nhf\filmtar\csaladi.h
+	"memtrace.h"
 	"film.h"
 
-1684752853 c:\users\lacik\desktop\nhf\filmtar\film.h
+1685096761 c:\users\lacik\desktop\nhf\filmtar\film.h
 	<iostream>
 	<fstream>
 	<string>
+	"memtrace.h"
 
-1682966416 source:c:\users\lacik\desktop\nhf\filmtar\dokumentum.cpp
+1685095011 source:c:\users\lacik\desktop\nhf\filmtar\dokumentum.cpp
+	"memtrace.h"
 	"dokumentum.h"
 
-1684752546 c:\users\lacik\desktop\nhf\filmtar\dokumentum.h
+1685095011 c:\users\lacik\desktop\nhf\filmtar\dokumentum.h
+	"memtrace.h"
 	"film.h"
 
-1682966416 source:c:\users\lacik\desktop\nhf\filmtar\film.cpp
+1685095011 source:c:\users\lacik\desktop\nhf\filmtar\film.cpp
+	"memtrace.h"
 	"film.h"
 
-1684770925 source:c:\users\lacik\desktop\nhf\filmtar\main_teszt.cpp
+1685112234 source:c:\users\lacik\desktop\nhf\filmtar\main_teszt.cpp
 	<ios>
 	<limits>
 	"memtrace.h"
+	"gtest_lite.h"
 	"film.h"
 	"csaladi.h"
 	"dokumentum.h"
 	"tar.h"
+	"menu.h"
 
-1684769766 c:\users\lacik\desktop\nhf\filmtar\tar.h
+1685095011 c:\users\lacik\desktop\nhf\filmtar\tar.h
+	"memtrace.h"
 	"film.h"
 
-1684769795 source:c:\users\lacik\desktop\nhf\filmtar\tar.cpp
+1685104957 source:c:\users\lacik\desktop\nhf\filmtar\tar.cpp
+	"memtrace.h"
 	"tar.h"
 	"dokumentum.h"
 	"csaladi.h"
@@ -132,4 +142,39 @@
 	"tar.h"
 	"dokumentum.h"
 	"csaladi.h"
+
+1684771165 source:c:\users\lacik\desktop\nhf\filmtar\memtrace.cpp
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+	<ctype.h>
+	"memtrace.h"
+
+1685097720 c:\users\lacik\desktop\nhf\filmtar\menu.h
+	"memtrace.h"
+	"tar.h"
+
+1685097771 source:c:\users\lacik\desktop\nhf\filmtar\menu.cpp
+	<ios>
+	<limits>
+	"memtrace.h"
+	"film.h"
+	"csaladi.h"
+	"dokumentum.h"
+	"tar.h"
+	"menu.h"
+
+1683540439 c:\users\lacik\desktop\nhf\filmtar\gtest_lite.h
+	<iostream>
+	<cassert>
+	<cmath>
+	<cstring>
+	<limits>
+	<cstdlib>
+	<string>
+	<fstream>
+	<iterator>
+	<regex>
+	"memtrace.h"
 

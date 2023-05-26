@@ -67,8 +67,6 @@ void Tar::betolt(const char* file){
 void Tar::mentes(const char* file)const{
     std::ofstream outFile;
     outFile.open(file);
-    if(!outFile.is_open())
-        throw "Nem sikerult megynitni a fajlt!\n";
     for(size_t i = 0; i < db; ++i){
         filmek[i]->kiir(outFile);
     }
