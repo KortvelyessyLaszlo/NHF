@@ -9,29 +9,31 @@
 #include "tar.h"
 #include "menu.h"
 
+
+
 using namespace std;
 
 void Test1(){// A beolvaso es kiiro fuggvenyek tesztelese
-    cout << "--->Test1: A filmek beolvasasanak es kiirasanak a tesztelese<---" << endl << endl;
+    cout << "--->Test1: A filmek beolvasasanak es kiirasanak a tesztelese<---" << endl;
 
-    cout << "---Film tipusu film beolvasasa---" << endl;
+    cout << endl << "---Film tipusu film beolvasasa---" << endl;
     Film film;
     film.beolvas();
     film.kiir();
 
-    cout << "---Dokumentum tipusu film beolvasasa---" << endl;
+    cout << endl << "---Dokumentum tipusu film beolvasasa---" << endl;
     Dokumentum dok;
-    dok.beolvas();      
+    dok.beolvas();
     dok.kiir();
 
-    cout << "---Csaladi tipusu film beolvasasa---" << endl;
+    cout << endl << "---Csaladi tipusu film beolvasasa---" << endl;
     Csaladi csal;
     csal.beolvas();
     csal.kiir();
 }
 
 int main(){
-
+#if TEST
     Test1(); //Film osztaly es leszarmazottak tesztelese
 
     TEST(Test2,Tarolo){
@@ -77,6 +79,35 @@ int main(){
 
         tar.mentes("adat.txt"); //Nem szukseges kivetelt dobnia, mert letrehozza a parameterben levo fajlt, ha az meg nem letezik
     }ENDM
+#endif // Test
+
+    Menu menu;
+    Tar tar;
+    tar.betolt("adat.txt");
+    char valasztas;
+    while(valasztas != 'e'){
+        cout << endl <<"a: hozzaadas" << endl << "b: torles" << endl << "c: listazas" << endl << "e: exit" << endl;
+        cin >> valasztas;
+        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        switch(valasztas){
+            case 'a':{
+                menu.A(tar);
+            }break;
+            case 'b':{
+                menu.B(tar);
+            }break;
+            case 'c':{
+                menu.C(tar);
+            }break;
+            case 'e':
+                break;
+            default:{
+                cout << "A fenti opciok kozul valasszon!";
+            }
+        }
+
+    }
+    tar.mentes("adat.txt");
 
     return 0;
 }

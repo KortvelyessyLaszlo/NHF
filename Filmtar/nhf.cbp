@@ -39,6 +39,7 @@
 		<Unit filename="dokumentum.h" />
 		<Unit filename="film.cpp" />
 		<Unit filename="film.h" />
+		<Unit filename="gtest_lite.h" />
 		<Unit filename="main_teszt.cpp" />
 		<Unit filename="memtrace.cpp" />
 		<Unit filename="memtrace.h" />
